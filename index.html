@@ -1684,6 +1684,25 @@ body{
   .brand-mini-text{font-size:10px;max-width:150px}.hero h1{font-size:34px}
   .product-photo{height:205px}.product-card{border-radius:14px}
 }
+    function loginUser(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("loginName").value.trim();
+
+    if (name === "") {
+        showToast("Please enter your name");
+        return;
+    }
+
+    // User ka naam save karega
+    localStorage.setItem("userName", name);
+
+    // Home screen par le jayega
+    showScreen("home");
+
+    // Welcome message
+    showToast("Welcome, " + name + "!");
+}
 /* ===== EXTRA LARGE PROFILE SCREEN ===== */
 
 #profile .page {
@@ -1787,7 +1806,7 @@ body{
         <img
             class="auth-image"
             <img src="mubb.jpeg" alt="Image">
-            alt="Chauhan Premium Wears">
+        
 
         <div class="auth-logo">M/C</div>
 
@@ -1826,13 +1845,28 @@ body{
         <form onsubmit="loginUser(event)">
 
             <div class="input-wrap">
+                <label>Name</label>
+                <input 
+                    type="text" 
+                    id="loginName"
+                    placeholder="Enter your name" 
+                    required>
+            </div>
+
+            <div class="input-wrap">
                 <label>Email or Phone Number</label>
-                <input type="text" placeholder="Enter email or phone" required>
+                <input 
+                    type="text" 
+                    placeholder="Enter email or phone" 
+                    required>
             </div>
 
             <div class="input-wrap">
                 <label>Password</label>
-                <input type="password" placeholder="Enter password" required>
+                <input 
+                    type="password" 
+                    placeholder="Enter password" 
+                    required>
             </div>
 
             <div style="text-align:right;margin:5px 0 18px;">
@@ -1841,7 +1875,7 @@ body{
                 </span>
             </div>
 
-            <button class="gold-btn full-btn">
+            <button type="submit" class="gold-btn full-btn">
                 LOGIN
             </button>
 
@@ -1853,15 +1887,18 @@ body{
 
         <div style="display:flex;justify-content:center;gap:10px;">
 
-            <button class="outline-btn" onclick="showToast('Google login demo')">
+            <button type="button" class="outline-btn"
+                onclick="showToast('Google login demo')">
                 G
             </button>
 
-            <button class="outline-btn" onclick="showToast('Apple login demo')">
+            <button type="button" class="outline-btn"
+                onclick="showToast('Apple login demo')">
                 
             </button>
 
-            <button class="outline-btn" onclick="showToast('Facebook login demo')">
+            <button type="button" class="outline-btn"
+                onclick="showToast('Facebook login demo')">
                 f
             </button>
 
@@ -1875,7 +1912,6 @@ body{
     </div>
 
 </section>
-
 
 <!-- =========================================================
      SIGN UP
@@ -2000,8 +2036,8 @@ body{
             <div class="hero-photo">
 
                 <img
-                    src="G:\clothing website\mubb.jpeg"
-                    alt="Collection">
+                    src="mubb.jpeg" alt="Image">
+                    <!-- alt="Collection" -->
 
                 <div class="hero-card">
                     <small>NEW ARRIVALS</small>
@@ -2437,8 +2473,8 @@ body{
 
                 <div class="avatar">
                     <img
-                        src="G:\clothing website\mubb.jpeg"
-                        alt="Profile">
+                        src="mubb.jpeg" alt="Image">
+                        <!-- alt="Profile"> -->
                 </div>
 
                 <div>
