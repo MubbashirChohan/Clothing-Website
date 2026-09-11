@@ -1704,44 +1704,88 @@ body{
     showToast("Welcome, " + name + "!");
 }
 /* ===== EXTRA LARGE PROFILE SCREEN ===== */
+/* ===== SMALL / TABLET SCREENS (576px to 768px) ===== */
+@media screen and (max-width: 768px) {
+    #profile .page {
+        max-width: 100%;
+        padding: 0 15px 40px;
+    }
 
-#profile .page {
-    max-width: 1500px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 30px 120px !important;
+    #profile .profile-card {
+        width: 100%;
+        margin: 15px auto;
+    }
+
+    #profile .profile-head {
+        min-height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #profile .avatar {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 15px;
+    }
+
+    #profile .profile-head h2 {
+        font-size: 22px;
+    }
+
+    #profile .menu-list {
+        /* Single column layout for small screens */
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    #profile .menu-item {
+        min-height: auto;
+        font-size: 14px;
+        padding: 15px;
+    }
 }
 
-#profile .profile-card {
-    width: 100% !important;
-    max-width: 1450px !important;
-    margin: 30px auto !important;
-}
+/* ===== EXTRA LARGE PROFILE SCREEN (Desktops 1200px and up) ===== */
+@media screen and (min-width: 1200px) {
+    #profile .page {
+        max-width: 1500px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 30px 120px;
+    }
 
-#profile .profile-head {
-    min-height: 180px !important;
-    padding: 40px !important;
-}
+    #profile .profile-card {
+        width: 100%;
+        max-width: 1450px;
+        margin: 30px auto;
+    }
 
-#profile .avatar {
-    width: 150px !important;
-    height: 150px !important;
-}
+    #profile .profile-head {
+        min-height: 180px;
+        padding: 40px;
+    }
 
-#profile .profile-head h2 {
-    font-size: 34px !important;
-}
+    #profile .avatar {
+        width: 150px;
+        height: 150px;
+    }
 
-#profile .menu-list {
-    grid-template-columns: repeat(2, 1fr) !important;
-    padding: 35px !important;
-    gap: 20px !important;
-}
+    #profile .profile-head h2 {
+        font-size: 34px;
+    }
 
-#profile .menu-item {
-    min-height: 100px !important;
-    font-size: 15px !important;
-    padding: 25px !important;
+    #profile .menu-list {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 35px;
+        gap: 20px;
+    }
+
+    #profile .menu-item {
+        min-height: 100px;
+        font-size: 15px;
+        padding: 25px;
+    }
 }
 /* ===== WELCOME / AUTH LOGO FIX ===== */
 
